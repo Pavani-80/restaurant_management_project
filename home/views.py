@@ -21,3 +21,6 @@ def contact(request):
         "address": "123 Main Street, Hyderabad, India"
     }
     return render(request, "contact.html, {"contact_info": contact_info})
+
+def reservations(request):
+    return render(request, 'reservations.html')
