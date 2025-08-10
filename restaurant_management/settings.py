@@ -123,6 +123,7 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 RESTAURANT_NAME = "My Awesome restaurant"
+RESTAURANT_PHONE = "+91 98765 43210"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
