@@ -7,7 +7,8 @@ def custom_404(request, exception):
 def home_view(request):
     context = { 
         'restaurant_name': settings.RESTAURANT_NAME,
-        'restaurant_phone': settings.RESTAURANT_PHONE
+        'restaurant_phone': settings.RESTAURANT_PHONE,
+        'current_year': datetime.now().year
     }
     return render(request, 'home.html', context)
 
@@ -23,4 +24,5 @@ def contact(request):
     return render(request, "contact.html, {"contact_info": contact_info})
 
 def reservations(request):
-    return render(request, 'reservations.html')
+    return render(request, 'reservations.html', {'current_year': datetime.now().year})
+        
