@@ -2,25 +2,61 @@
 <html>
 <head>
     <title>Restaurant Management</title>
+    <style>
+        body {
+        font-family: Arial, sans-serif;
+        background-color: #f8f9fa;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        }
+        .container {
+            padding: 50px;
+         }
+         h1 {
+             color: #2c3e50;
+             font-size: 36px;
+             margin-bottom: 20px;
+        }
+        p {
+            color: #555;
+            font-size: 18px;
+            margib-bottom: 40px;
+        }
+        a.button {
+             display: inline-block;
+             padding: 12px 25px;
+             font-size: 16px;
+             border-radius: 5px;
+             text-decoration: none;
+             color: white;
+             translation: background-color 0.3s ease;
+             margin: 5px;
+        }
+        a.green {
+             background-color: #28a745;
+        }
+        a.green:hover {
+             background-color: #218838;
+        }
+        a.blue: {
+            background-color: #007bff;
+        }
+        a.blue:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
-<body style="font-family: Arial, sans-serif; background-color: #f8f9fa; margin: 0; padding: 0;">
-    <div style="text-align: center; padding: 50px">
-        <h1 style="color: #2c3e50; font-size: 36px; margin-bottom: 50px">
-            Welcome to My Awesome Restaurant Management
-        </h1>
-        <p style="color: #333; font-size: 18px; margin-bottom: 20px">
-            Manage your Restaurant with ease and efficiency.
-        </p>
-        <a href="/api/products/"
-           style="background-color: #28a745; color: white; text-decoration: none; padding: 12px 25px; border-radius: 5px; font-size: 16px">
-           View Products
-        </a>
-        <a href="/api/orders/"
-           style="background-color: #007bff; color: white; text-decoration: none; padding: 12px 25px; border-radius: 5px; font-size: 16px; margin-left: 10px">
-           View Orders
-        </a>
+<body>
+    <div class="container">
+        <h1>Welcome to My Awesome Restuarant Management</h1>
+        <p>Manage your restaurant with ease and efficiency.</p>
+        <a href="/api/products/" class="button green">View Products</a>
+        <a href="/api/orders/" class="button blue">View Orders</a>
     </div>
 </body>
 </html>
+
+
 
            
