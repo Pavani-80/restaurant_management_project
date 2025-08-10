@@ -1,16 +1,24 @@
 from django.shortcuts import render
 from django.conf import settings 
+from django.http import HttpResponse
+from django.db import DatabaseError
+from datetime import datetime
 
 def custom_404(request, exception):
     return render(request, '404.html', status=404)
-
+        }
 def home_view(request):
-    context = { 
-        'restaurant_name': settings.RESTAURANT_NAME,
-        'restaurant_phone': settings.RESTAURANT_PHONE,
-        'current_year': datetime.now().year
+    try:
+        context = { 
+            'restaurant_name': settings.RESTAURANT_NAME,
+            'restaurant_phone': settings.RESTAURANT_PHONE,
+            'current_year': datetime.now().year
     }
-    return render(request, 'home.html', context)
+        return render(request, 'home.html', context)
+    except DatabaseError:
+        return HttpResponse("Sorry, we are having technical issues with our database.", status=500)
+    except Exception as e:
+        return HttpResponse(f"An unexpected error occured: {e}", status=500)
 
 def about(request):
     return render(request, 'about.html')
