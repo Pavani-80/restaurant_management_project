@@ -6,7 +6,8 @@ def custom_404(request, exception):
 
 def home_view(request):
     context = { 
-        'restaurant_name': settings.RESTAURANT_NAME
+        'restaurant_name': settings.RESTAURANT_NAME,
+        'restaurant_phone': settings.RESTAURANT_PHONE
     }
     return render(request, 'home.html', context)
 
