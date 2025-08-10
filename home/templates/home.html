@@ -21,7 +21,7 @@
         p {
             color: #555;
             font-size: 18px;
-            margib-bottom: 40px;
+            margin-bottom: 40px;
         }
         a.button {
              display: inline-block;
@@ -30,7 +30,7 @@
              border-radius: 5px;
              text-decoration: none;
              color: white;
-             translation: background-color 0.3s ease;
+             transistion: background-color 0.3s ease;
              margin: 5px;
         }
         a.green {
@@ -39,7 +39,7 @@
         a.green:hover {
              background-color: #218838;
         }
-        a.blue: {
+        a.blue {
             background-color: #007bff;
         }
         a.blue:hover {
@@ -50,8 +50,9 @@
 <body>
     <div class="container">
         <h1>Welcome to {{ restaurant_name }}</h1>
-        <P> Call us at: <strong>{{ retaurant_phone }}</strong></p>
+        <P> Call us at: <strong>{{ restaurant_phone }}</strong></p>
         <p>Manage your restaurant with ease and efficiency.</p>
+        
         <a href="/api/products/" class="button green">View Products</a>
         <a href="/api/orders/" class="button blue">View Orders</a>
 
