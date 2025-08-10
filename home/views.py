@@ -12,3 +12,11 @@ def home_view(request):
 
 def about(request):
     return render(request, 'about.html')
+
+def contact(request):
+    contact_info = {
+        "phone": "+91 98765 43210",
+        "email": "info@myrestaurant.com",
+        "address": "123 Main Street, Hyderabad, India"
+    }
+    return render(request, "contact.html, {"contact_info": contact_info})
