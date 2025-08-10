@@ -1,3 +1,6 @@
+
+{% load static html>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -49,6 +52,8 @@
 </head>
 <body>
     <div class="container">
+        <!-- Logo -->
+        <img scr="{%static 'images/logo.png' %}" alt="Restaurant Logo" class="logo">
         <h1>Welcome to {{ restaurant_name }}</h1>
         <P> Call us at: <strong>{{ restaurant_phone }}</strong></p>
         <p>Manage your restaurant with ease and efficiency.</p>
