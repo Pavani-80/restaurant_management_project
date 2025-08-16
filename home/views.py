@@ -37,8 +37,10 @@ def reservations(request):
 
 def feedback_view(request):
     if request.method == "POST":
-        comment:
+        comment = request.POST.get("comment")
+        if comment:
           Feedback.objects.create(comment=comment)
           return redirect("feedback")
-    retrun render(request, "feedback.html")
+    feedback_list = Feedback.objects.all().order_by('-created_at')
+    retrun render(request, "feedback.html", {"feedback_list: feedback_list"})
         
