@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Flask Image Viewer with Search</title>
+    <style>
+        body {
+             fomt-family: Arial, sans_serif;
+             margin: 20px;
+        }
+        h1 {
+            color:#222;
+        }
+        .search-box {
+            margin: 20px 0;
+        }
+        .search-box input[type="text"] {
+            padding: 8px;
+            width: 300px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .search-box button{
+            padding: 8px 12px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .search-box button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>Flask Image Viewer</h1>
+    <p>This is Task 4: Displaying an image using Flask.</p>
+    <!-- Search Bar -->
+    <div class="search-box">
+        <form method="GET" action="#">
+            <input type="text" name="search" placeholder="search menu items...">
+            <button type="submit">search</button>
+        </form>
+    </div>
+    <!-- Displaying image -->
+    <img src="{{ url_for('static', filname='yourimage.jpg') }}" alt="My Image" width='500'>
+</body>
+</html>
