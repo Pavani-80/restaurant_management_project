@@ -29,7 +29,7 @@ def contact(request):
         "email": "info@myrestaurant.com",
         "address": "123 Main Street, Hyderabad, India"
     }
-    return render(request, "contact.html, {"contact_info": contact_info})
+    return render(request, "contact.html", {"contact_info": contact_info})
 
 def reservations(request):
     return render(request, 'reservations.html', {'current_year': datetime.now().year})
