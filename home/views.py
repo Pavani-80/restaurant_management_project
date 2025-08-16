@@ -1,8 +1,9 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from django.conf import settings 
 from django.http import HttpResponse
 from django.db import DatabaseError
 from datetime import datetime
+from .models import Feedback
 
 def custom_404(request, exception):
     return render(request, '404.html', status=404)
@@ -33,4 +34,11 @@ def contact(request):
 
 def reservations(request):
     return render(request, 'reservations.html', {'current_year': datetime.now().year})
+
+def feedback_view(request):
+    if request.method == "POST":
+        comment:
+          Feedback.objects.create(comment=comment)
+          return redirect("feedback")
+    retrun render(request, "feedback.html")
         
