@@ -10,12 +10,23 @@ def custom_404(request, exception):
         }
 def home_view(request):
     try:
+        try:
+            response = requests.get("http://127.0.0.1.8000/api/menu")
+            if response.status_code == 200:
+                menu_items = response.json()
+            else:
+                menu_items = []
+        except:
+            menu_items = []
+
         context = { 
             'restaurant_name': settings.RESTAURANT_NAME,
             'restaurant_phone': settings.RESTAURANT_PHONE,
             'current_year': datetime.now().year
+            'menu_items': menu_items,
     }
         return render(request, 'home.html', context)
+        
     except DatabaseError:
         return HttpResponse("Sorry, we are having technical issues with our database.", status=500)
     except Exception as e:
@@ -42,5 +53,5 @@ def feedback_view(request):
           Feedback.objects.create(comment=comment)
           return redirect("feedback")
     feedback_list = Feedback.objects.all().order_by('-created_at')
-    retrun render(request, "feedback.html", {"feedback_list: feedback_list"})
+    return render(request, "feedback.html", {"feedback_list": feedback_list"})
         
