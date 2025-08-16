@@ -4,6 +4,8 @@ from django.http import HttpResponse
 from django.db import DatabaseError
 from datetime import datetime
 from .models import Feedback
+from rest_framework.decorators import api_view
+from rest_framework.response import Response
 
 def custom_404(request, exception):
     return render(request, '404.html', status=404)
