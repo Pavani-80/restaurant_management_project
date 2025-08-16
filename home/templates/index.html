@@ -5,7 +5,7 @@
     <title>Flask Image Viewer with Search</title>
     <style>
         body {
-             fomt-family: Arial, sans_serif;
+             font-family: Arial, sans-serif;
              margin: 20px;
         }
         h1 {
@@ -44,6 +44,30 @@
         </form>
     </div>
     <!-- Displaying image -->
-    <img src="{{ url_for('static', filname='yourimage.jpg') }}" alt="My Image" width='500'>
+    <img src="{{ url_for('static', filename='yourimage.jpg') }}" alt="My Image" width='500'>
+    <!-- Contact Form -->
+    <div class="contact-form">
+        <h2>Contact Us</h2>
+        <form id="contactForm">
+            <label for="name">Name:</label><br>
+            <input text="text" id="name" name="name"><br><br>
+
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email"><br><br>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    <!-- Client-Side validation -->
+    <script>
+        document.getElementbyid("contactform").addEventListner("submit", function(event) {
+           const name = document.getElementById("name").value.trim();
+           const email = document.getElementById("email").value.trim();
+           
+           if (name === "" || email ==="") {
+              alert("please fill in both Name and Email fields.");
+            }
+        });
+    </script>
 </body>
 </html>
