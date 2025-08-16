@@ -1,3 +1,12 @@
 from django.db import models
+class Feedback(models.Model):
 
-# Create your models here.
+    comment = models.TextField()
+
+    def __str__(self):
+        return self.comment[:50]
+
+
+
+
+
