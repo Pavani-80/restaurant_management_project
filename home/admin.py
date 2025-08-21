@@ -1,5 +1,6 @@
 from django.contrib import admin
 from .models import Feedback, UserProfile, Menu, Order
+from .models import MenuItem
 
 @admin.registe(Feedback)
 class FeedbackAdmin(admin.ModelAdmin):
