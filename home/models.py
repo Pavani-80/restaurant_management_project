@@ -21,7 +21,7 @@ class Menu(models.Model):
     price = models.DecimalField(max_digits=8, decimal_places=2)
 
     def __str__(self):
-        return self.name:
+        return f"{self.name} - {self.Price}";
 
 class Order(models.Model):
     STATUS_CHOICES = [
