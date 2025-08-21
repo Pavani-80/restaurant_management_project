@@ -125,7 +125,7 @@ STATIC_URL = 'static/'
 STATICFILES_DIRS = [BASE_DIR / "static"]
 RESTAURANT_NAME = "Tasty Bites"
 RESTAURANT_PHONE = "+91 98765 43210"
-RESTAURANT_ADDRESS = "123 MG ROAD, Banglore, India"
+RESTAURANT_ADDRESS = "890 MG ROAD, Banglore, India"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
