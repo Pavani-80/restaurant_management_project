@@ -46,7 +46,7 @@ class ContactSubmission(models.Model):
     submitted_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return f"{self.name} - {self.email}"
+        return f"{self.name} ({self.email})"
 
 
 
