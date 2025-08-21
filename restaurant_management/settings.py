@@ -123,7 +123,7 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [BASE_DIR / "static"]
-RESTAURANT_NAME = "My Awesome restaurant"
+RESTAURANT_NAME = "Tasty Bites"
 RESTAURANT_PHONE = "+91 98765 43210"
 
 # Default primary key field type
