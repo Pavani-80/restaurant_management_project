@@ -1,73 +1,53 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Flask Image Viewer with Search</title>
-    <style>
-        body {
-             font-family: Arial, sans-serif;
-             margin: 20px;
-        }
-        h1 {
-            color:#222;
-        }
-        .search-box {
-            margin: 20px 0;
-        }
-        .search-box input[type="text"] {
-            padding: 8px;
-            width: 300px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-        .search-box button{
-            padding: 8px 12px;
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-        .search-box button:hover {
-            background-color: #45a049;
-        }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ restaurant_name }}</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
-    <h1>Flask Image Viewer</h1>
-    <p>This is Task 4: Displaying an image using Flask.</p>
-    <!-- Search Bar -->
-    <div class="search-box">
-        <form method="GET" action="#">
-            <input type="text" name="search" placeholder="search menu items...">
-            <button type="submit">search</button>
-        </form>
-    </div>
-    <!-- Displaying image -->
-    <img src="{{ url_for('static', filename='yourimage.jpg') }}" alt="My Image" width='500'>
-    <!-- Contact Form -->
-    <div class="contact-form">
-        <h2>Contact Us</h2>
-        <form id="contactForm">
-            <label for="name">Name:</label><br>
-            <input text="text" id="name" name="name"><br><br>
 
-            <label for="email">Email:</label><br>
-            <input type="email" id="email" name="email"><br><br>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">{{ restaurant_name }}</div>
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Menu</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
 
-            <button type="submit">Submit</button>
-        </form>
-    </div>
-    <!-- Client-Side validation -->
-    <script>
-        document.getElementbyid("contactform").addEventListner("submit", function(event) {
-           const name = document.getElementById("name").value.trim();
-           const email = document.getElementById("email").value.trim();
-           
-           if (name === "" || email ==="") {
-              alert("please fill in both Name and Email fields.");
-            }
-        });
-    </script>
+    <!-- Hero Section -->
+    <header class="hero">
+        <h1>Welcome to <span>{{ restaurant_name }}</span></h1>
+        <p>Delicious Food, Great Vibes 🍽✨</p>
+        <a href="#" class="btn">Explore Menu</a>
+    </header>
+
+    <!-- About Section -->
+    <section class="about">
+        <h2>About Us</h2>
+        <p>We bring you the best dishes with love and flavor. Order online or visit us!</p>
+    </section>
+
+    <!-- Contact Info -->
+    <section class="contact">
+        <div class="contact-card">
+            <h3><i class="fas fa-map-marker-alt"></i> Contact Information</h3>
+            <p><strong>📞 Phone:</strong> {{ restaurant_phone }}</p>
+            <p><strong>📧 Email:</strong> {{ restaurant_email }}</p>
+            <p><strong>📍 Address:</strong> {{ restaurant_address }}</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 {{ restaurant_name }} | All Rights Reserved</p>
+    </footer>
+
 </body>
 </html>
