@@ -1,23 +1,44 @@
-{% extends "base.html" %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Feedback - {{ restaurant_name }}</title>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+  <header>
+    <h1>Feedback for {{ restaurant_name }}</h1>
+  </header>
 
-{% block content %}
-  <h2>Leave Your Feedback</h2>
+  <main>
+    <form method="POST">
+      {% csrf_token %}
+      <textarea name="comment" placeholder="Write your feedback..." required></textarea>
+      <button type="submit">Submit</button>
+    </form>
 
-  <form method="post">
-    {% csrf_token %}
-    <textarea name="comment" rows="4" cols="50" placeholder="Enter yoyr feedback here..." required></textarea>
-    <button tyoe="submit">submit</button>
-  </form>
+    <h2>What our customers say:</h2>
+    <ul>
+      {% for fb in feedback_list %}
+        <li>{{ fb.comment }} <small>({{ fb.created_at }})</small></li>
+      {% empty %}
+        <p>No feedback yet. Be the first to share your thoughts!</p>
+      {% endfor %}
+    </ul>
 
-  <br>
-  <h3>Previous Feedback</h3>
-  <ul>
-    {% for fb in feedback_list %}
-      <li>{{ fb.comment }} <small>({{ fb.created_at }})</small></li>
-    {% empty %}
-      <li> No feedback yet. Be the first!</li>
-    {% endfor %}
-  </ul>
-{% endblock %}
+    <h3>📞 Contact Us</h3>
+    <p>{{ restaurant_phone }} | {{ restaurant_email }}</p>
+    <p>📍 {{ restaurant_address }}</p>
+  </main>
+
+  <footer>
+    <p>&copy; {{ current_year }} {{ restaurant_name }}. All Rights Reserved.</p>
+  </footer>
+</body>
+</html>
+
+
+ 
+
 
  
