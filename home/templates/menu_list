@@ -1,1 +1,19 @@
-<!DOCTYPE html>
+!<DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, intial-sacle=1.0">
+    <title>Menu</title>
+</head>
+<body style="fony-family: Arial; padding: 40px;">
+    <h1> Our Menu</h1>
+    <u1>
+        {% for item in menu_items %}
+            <li>{{ item.name }} - ${{ item.price }}</li>
+            <small>{{ item_description }}</small>
+        {% endfor %}
+    </ul>
+    <br>
+    <a href="/" style="color: #007bff;">Back to Home</a>
+</body>
+</html>
