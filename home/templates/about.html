@@ -1,20 +1,27 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About - My Restaurant</title>
+  <meta charset="UTF-8">
+  <title>About Us - {{ restaurant_name }}</title>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
-<body style="font-family: Arial, sans-serif; background-color: #fff; padding: 40px text-align: center;">
-    <h1>About Our Restaurant</h1>
-    <p style="font-size: 18px; max-width: 600px; margin: 20px auto">
-        Welcome to our restaurant, where culinary passion meets warm hospitality.
-        we specialize in offering delicious, freshly prepared meals made with locally sourced ingredients.
-        Join us for a memorable dining experience!
-    </p>
-    <img src="{% static 'images/restaurant.jpg' %}" alt="Restaurant Image" style="max-width: 100%; height: auto; border-radius: 10px; matgin-top: 20px">
-    <br><br>
-    <a href="/" style="text-decoration: none; color: #007bff;"> Back to Home</a>
+<body>
+  <header>
+    <h1>About {{ restaurant_name }}</h1>
+  </header>
+
+  <main>
+    <p>Welcome to <strong>{{ restaurant_name }}</strong>!  
+    We serve delicious food with love in the heart of Bangalore.</p>
+
+    <h3>📍 Contact Info</h3>
+    <p>Address: {{ restaurant_address }}</p>
+    <p>Phone: {{ restaurant_phone }}</p>
+    <p>Email: {{ restaurant_email }}</p>
+  </main>
+
+  <footer>
+    <p>&copy; {{ current_year }} {{ restaurant_name }}. All Rights Reserved.</p>
+  </footer>
 </body>
 </html>
-
