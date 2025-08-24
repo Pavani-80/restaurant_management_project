@@ -7,5 +7,4 @@ urlpatterns = [
     path('menu/', views.menu_list, name='menu_list'),
     path('contact/', views.contact, name='contact'),
     path('reservations/', views.reservations, name='reservations'),
-    path("", include("yourapp.urls")),
 ]
