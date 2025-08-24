@@ -1,3 +1,6 @@
-<footer style="background-color:#2c3e50; color:white; taxt-align:center; padding:10px; margin-top:50px;">
-    <p>&copy; {{ current_year }} My Awesome Resyaurant. All rights reserved.</p>
-</footer>   
+<footer class="bg-dark text-white text-center py-3 mt-5">
+  <p class="mb-1">&copy; {{ current_year }} {{ restaurant_name }}. All Rights Reserved.</p>
+  <p class="mb-0">
+    📞 {{ restaurant_phone }} | 📧 {{ restaurant_email }} | 📍 {{ restaurant_address }}
+  </p>
+</footer>
