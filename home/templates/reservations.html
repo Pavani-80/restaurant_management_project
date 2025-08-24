@@ -1,34 +1,23 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Reservations</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f8f9fa;
-            margin: 0;
-            padding: 0;
-            text-align: center;
-        }
-        .container {
-            padding: 50px:
-        }
-        h1 {
-            color: #2c3e50;
-            font-size: 36px;
-            margin-bottom: 20px;
-        }
-        p {
-            color: #555;
-            font-size: 18px;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <title>Reservations - {{ restaurant_name }}</title>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
-    <div class="container">
-        <h1>Reservations</h1>
-        <p>Online reservations will be available soon.
-            please call us to book your table.</p>
-    </div>
+  <header>
+    <h1>Book a Table at {{ restaurant_name }}</h1>
+  </header>
+
+  <main>
+    <p>We’d love to host you! Call us at <strong>{{ restaurant_phone }}</strong>  
+    or email <strong>{{ restaurant_email }}</strong> to book your reservation.</p>
+    <p>📍 Location: {{ restaurant_address }}</p>
+  </main>
+
+  <footer>
+    <p>&copy; {{ current_year }} {{ restaurant_name }}. All Rights Reserved.</p>
+  </footer>
 </body>
 </html>
