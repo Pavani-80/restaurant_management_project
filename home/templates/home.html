@@ -1,74 +1,70 @@
-{% load static %}
+
+{% load static html %}
+
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ restaurant_name }} - Home</title>
-
-    <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>Restaurant Management</title>
+    <style>
+        body {
+        font-family: Arial, sans-serif;
+        background-color: #f8f9fa;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        }
+        .container {
+            padding: 50px;
+         }
+         h1 {
+             color: #2c3e50;
+             font-size: 36px;
+             margin-bottom: 20px;
+        }
+        p {
+            color: #555;
+            font-size: 18px;
+            margin-bottom: 40px;
+        }
+        a.button {
+             display: inline-block;
+             padding: 12px 25px;
+             font-size: 16px;
+             border-radius: 5px;
+             text-decoration: none;
+             color: white;
+             transistion: background-color 0.3s ease;
+             margin: 5px;
+        }
+        a.green {
+             background-color: #28a745;
+        }
+        a.green:hover {
+             background-color: #218838;
+        }
+        a.blue {
+            background-color: #007bff;
+        }
+        a.blue:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
 <body>
-
-    <!-- Header -->
-    <header>
+    <div class="container">
+        <!-- Logo -->
+        <img scr="{%static 'images/logo.png' %}" alt="Restaurant Logo" class="logo">
         <h1>Welcome to {{ restaurant_name }}</h1>
-        <p>Delicious Food, Great Vibes 🍴✨</p>
-    </header>
+        <P> Call us at: <strong>{{ restaurant_phone }}</strong></p>
+        <p>Manage your restaurant with ease and efficiency.</p>
+        
+        <a href="/api/products/" class="button green">View Products</a>
+        <a href="/api/orders/" class="button blue">View Orders</a>
 
-    <!-- Special Dishes -->
-    <section class="dishes container">
-        <h2>Our Special Dishes</h2>
-        <p class="mb-5">We bring you the best dishes with love and flavor. Order online or visit us!</p>
-        <div class="row g-4">
-            <div class="col-md-3">
-                <div class="dish-card">
-                    <i class="fa-solid fa-burger"></i>
-                    <h5>Burger</h5>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="dish-card">
-                    <i class="fa-solid fa-pizza-slice"></i>
-                    <h5>Pizza</h5>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="dish-card">
-                    <i class="fa-solid fa-bowl-food"></i>
-                    <h5>Pasta</h5>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="dish-card">
-                    <i class="fa-solid fa-ice-cream"></i>
-                    <h5>Dessert</h5>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <h4>📍 Contact Information</h4>
-        <p><strong>Phone:</strong> {{ restaurant_phone }}</p>
-        <p><strong>Email:</strong> {{ restaurant_email }}</p>
-        <p><strong>Address:</strong> {{ restaurant_address }}</p>
-        <p>© {{ current_year }} {{ restaurant_name }} | All Rights Reserved</p>
-    </footer>
-
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+        {% include 'footer.html' %}
+    </div>
 </body>
 </html>
-
 
 
 
