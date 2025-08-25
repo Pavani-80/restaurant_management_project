@@ -40,7 +40,7 @@ class Order(models.Model):
     def __str__(self):
         return f"Order {self.id} - {self.customer.username} - {self.status}"
 
-class ContactSubmission(models.Model):
+class Contact(models.Model):
     name = models.CharField(max_length=100)
     email = models.EmailField()
     submitted_at = models.DateTimeField(auto_now_add=True)
