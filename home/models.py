@@ -5,6 +5,8 @@ class Feedback(models.Model):
     comment = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
 
+    image = models.ImageField(upload_to='menu_images/', blank=True, null=True)
+
     def __str__(self):
         return f"Feedback {self.id} - {self.created_at.strftime('%y-%m-%d')}"
 
