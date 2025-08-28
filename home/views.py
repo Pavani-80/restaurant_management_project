@@ -30,6 +30,7 @@ def home_view(request):
             'restaurant_address': restaurant.address if restaurant else "123 Food street, Banglore, India"
             'current_year': datetime.now().year
             'menu_items': menu_items,
+            'query': query,
     }
         return render(request, 'home.html', context)
         
