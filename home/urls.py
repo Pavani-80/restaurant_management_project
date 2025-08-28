@@ -1,4 +1,7 @@
-from django.urls import path
+from django.conf import settings
+from django.conf.urls.sattic import sattic
+from django.contrib import admin
+from django.urls import path, include
 from . import views
 
 urlpatterns = [
@@ -7,5 +10,10 @@ urlpatterns = [
     path('menu/', views.menu_list, name='menu_list'),
     path('contact/', views.contact, name='contact'),
     path('reservations/', views.reservations, name='reservations'),
-    path("", include("yourapp.urls")),
+    path('admin/', admin.site.urls),
+    path('', include("yourapp.urls")),
+    path('products/', include('products.urls')),
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
