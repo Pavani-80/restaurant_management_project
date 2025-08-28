@@ -56,6 +56,9 @@ class Restauarnt(models.Model):
     email = models.CharField(default="hungryvibes@gmail.com")
     address = models.TextField(default="123 Food street, Banglore, India")
 
+    opening_hours = models.JSONField(default=dict, help_text="e.g., {'Mon-Fri': '9AM - 10PM', 'Sat-Sun': '10AM - 11PM}")
+    logo = models.ImageField(upload_to='restaurant_logos/', blank=True, null=True)
+
     def__str__(self):
         return self.name
 
