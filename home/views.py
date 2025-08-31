@@ -36,7 +36,7 @@ def home_view(request):
             'menu_items': menu_items,
             'query': query,
     }
-        return render(request, 'home.html', context)
+        return render(request, 'home.html', {"restaurant": restaurant})
         
     except DatabaseError:
         return HttpResponse("Sorry, we are having technical issues with our database.", status=500)
