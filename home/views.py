@@ -4,12 +4,16 @@ from django.http import HttpResponse
 from django.db import DatabaseError
 from datetime import datetime
 from .models import Feedback, MenuItem, Restaurant
+from .utils import get_cart_count
 import requests
+
 
 def custom_404(request, exception):
     return render(request, '404.html', status=404)
         }
 def home_view(request):
+    cart_count = get_cart_count(request)
+    return render(request, "home/home.html", {"cart_count": cart_count})
     try:
         menu_items = MenuItem.objects.all()
         try:
