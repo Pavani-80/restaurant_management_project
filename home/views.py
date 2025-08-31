@@ -43,8 +43,14 @@ def home_view(request):
     except Exception as e:
         return HttpResponse(f"An unexpected error occured: {e}", status=500)
 
-def about(request):
-    return render(request, 'about.html')
+def about_view(request):
+    return render(request, 'home/about.html', {
+
+        "restaurant_name": "Hungry Bites",
+        "history": "Hungry Bites was founded in 2010 with goal of bringing fresh, delicious meals to our community.",
+        "mission": "Our mission is to serve quality food with love, while creating a warm and welcoming atmosphere.",
+        "vision": "To be the go-to place for food lovers who seek both taste and experience."
+    })
 
 def contact(request):
     contact_info = {
